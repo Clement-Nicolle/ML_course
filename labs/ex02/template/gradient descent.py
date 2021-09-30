@@ -6,6 +6,8 @@ def compute_gradient(y, tx, w):
     # ***************************************************
     # INSERT YOUR CODE HERE
     # TODO: compute gradient and loss
+    e=y-tx@w
+    return -1/len(y) * np.transpose(tx)@e
     # ***************************************************
     raise NotImplementedError
 
@@ -20,11 +22,14 @@ def gradient_descent(y, tx, initial_w, max_iters, gamma):
         # ***************************************************
         # INSERT YOUR CODE HERE
         # TODO: compute gradient and loss
+        loss=compute_loss(y, tx, w)
+        grad=compute_gradient(y, tx, w)
         # ***************************************************
         raise NotImplementedError
         # ***************************************************
         # INSERT YOUR CODE HERE
         # TODO: update w by gradient
+        w= w-gamma*grad
         # ***************************************************
         raise NotImplementedError
         # store w and loss

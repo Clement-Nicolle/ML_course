@@ -9,5 +9,7 @@ def compute_loss(y, tx, w):
     # ***************************************************
     # INSERT YOUR CODE HERE
     # TODO: compute loss by MSE / MAE
+    e=y-tx@w
+    return 1/(2*len(y)) * np.transpose(e)@e
     # ***************************************************
     raise NotImplementedError
