@@ -12,5 +12,9 @@ def ridge_regression(y, tx, lambda_):
     # ***************************************************
     # INSERT YOUR CODE HERE
     # ridge regression: TODO
-    # ***************************************************
-    raise NotImplementedError
+    a,b=tx.shape
+    eye = np.eye(b)
+    w = np.linalg.solve(2*a*lambda_*eye + tx.transpose()@tx, tx.transpose()@y)
+    e = y - tx @ w
+    mse = 1/(2*len(y)) * e.transpose() @ e
+    return mse, w

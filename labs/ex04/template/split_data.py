@@ -15,5 +15,7 @@ def split_data(x, y, ratio, seed=1):
     # ***************************************************
     # INSERT YOUR CODE HERE
     # split the data based on the given ratio: TODO
+    n = ratio * len(y)
+    n = int(n)
+    return x[:n], y[:n], x[n:], y[n:]
     # ***************************************************
-    raise NotImplementedError
